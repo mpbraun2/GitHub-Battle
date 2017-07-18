@@ -1,0 +1,11 @@
+<h2> Rankings </h2>
+
+<div class="scroll">
+    <div ng-repeat="user in users">
+        <div class="box">
+            <img ng-src="{{user.avatar_url}}" alt="user">
+            <label for="score" ng-bind="user.score"></label>
+            <span ng-bind="user.name"></span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="scroll">
+    <div ng-if="user1.score>user2.score">
+        <div class="box">
+            <img ng-src="{{user1.avatar_url}}" alt="user1">
+            <span>{{user1.name}}</span>
+        </div>
+        <div class="box">
+            <h2> 1st Place </h2>
+            <h4> {{user1.name}} (Score: {{user1.score}}) </h4>
+            <h2> 2nd Place </h2>
+            <h4> {{user2.name}} (Score: {{user2.score}}) </h4>
+        </div>
+    </div>
+    <div ng-if="user2.score>user1.score">
+        <div class="box">
+            <img ng-src="{{user2.avatar_url}}" alt="user2">
+            <span>{{user2.name}}</span>
+        </div>
+        <div class="box">
+            <h2> 1st Place </h2>
+            <h4> {{user2.name}} (Score: {{user2.score}}) </h4>
+            <h2> 2nd Place </h2>
+            <h4> {{user1.name}} (Score: {{user1.score}}) </h4>
+        </div>
+    </div>
+    <div ng-if="user2.score==user1.score">
+        <h3>everybody gets a trophy</h3>
+        <h4> {{user2.username}} (Score: {{user2.score}}) </h4>
+        <h4> {{user1.username}} (Score: {{user1.score}}) </h4>
+    </div>
+
+    <input type="button" class="button" value="Reset" ng-click="reset()">
+</div>

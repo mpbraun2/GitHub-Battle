@@ -1,0 +1,35 @@
+<h2> Select Players</h2>
+
+<div class="scroll">
+    <div class="box">
+        <div ng-if="user1.avatar_url">
+            <img ng-src="{{user1.avatar_url}}" alt="user1">
+            <span>{{user1.name}}</span>
+        </div>
+        <div ng-if="!user1.avatar_url">
+            <form ng-submit="createUser1()">
+                <h3> Player 1 </h3>
+                <label for=""> Github Username </label>
+                <input type="text" ng-model="user1.username">
+                <input class="button" type="submit" value="Get User">
+            </form>
+        </div>
+    </div>
+    <div class="box">
+        <div ng-if="user2.avatar_url">
+            <img ng-src="{{user2.avatar_url}}" alt="user2">
+            <span>{{user2.name}}</span>
+        </div>
+        <div ng-if="!user2.avatar_url">
+            <form ng-submit="createUser2()">
+                <h3> Player 2 </h3>
+                <label for=""> Github Username </label>
+                <input type="text" ng-model="user2.username">
+                <input class="button" type="submit" value="Get User">
+            </form>
+        </div>
+    </div>
+    <div ng-if='user1.avatar_url && user2.avatar_url'>
+        <input type="button" class="button" value="Battle" ng-click="results()">
+    </div>
+</div>
